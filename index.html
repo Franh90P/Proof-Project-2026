@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Producción</title>
+<link rel="stylesheet" href="./styles/styles.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Calculadora de Producción</h1>
+
+<label>Hora inicio</label>
+<input type="time" id="horaInicio">
+
+<div class="checkbox">
+<input type="checkbox" id="horaActual" checked>
+<label for="horaActual" style="margin:0;font-weight:normal;">
+Usar hora actual
+</label>
+</div>
+
+<label>Tiempo tirada (minutos)</label>
+<input type="number" id="tiempo" >
+
+<label>Cantidad tirada</label>
+<input type="number" id="cantidadTirada">
+
+<label>Cantidad pedido</label>
+<input type="number" id="cantidadPedido">
+
+<button onclick="calcular()">
+Calcular
+</button>
+
+<div class="resultado" id="resultado">
+Introduce los datos para calcular.
+</div>
+<div class="creditos">
+    Hecho por <a href="https://www.linkedin.com/in/francisco-parra-navarro-25b976317/" target="_blank"><strong >Francisco Parra Navarro</strong> <i class="fa-brands fa-linkedin"></i></a>
+</div>
+</div>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>
