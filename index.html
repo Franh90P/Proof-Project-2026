@@ -1,51 +1,119 @@
 <!DOCTYPE html>
+
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Calculadora de Producción</title>
+
 <link rel="stylesheet" href="./styles/styles.css">
+
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
 </head>
+
 <body>
 
-<div class="container">
 
-<h1>Calculadora de Producción</h1>
+<!-- Capa oscura -->
+<div class="overlay"></div>
 
-<label>Hora inicio</label>
-<input type="time" id="horaInicio">
+<!-- Contenido -->
+<div class="contenido">
 
-<div class="checkbox">
-<input type="checkbox" id="horaActual" checked>
-<label for="horaActual" style="margin:0;font-weight:normal;">
-Usar hora actual
-</label>
-</div>
+    <figure>
+        <img class="mktfoto"
+            src="https://www.equipamientolaboral.com/wp-content/uploads/2025/03/makito-marca.webp"
+            alt="Makito">
+    </figure>
 
-<label>Tiempo tirada (minutos)</label>
-<input type="number" id="tiempo" >
+    <!-- CALCULADORA -->
+    <div class="container">
 
-<label>Cantidad tirada</label>
-<input type="number" id="cantidadTirada">
+        <h1>Calculadora de Producción</h1>
 
-<label>Cantidad pedido</label>
-<input type="number" id="cantidadPedido">
+        <label>Hora inicio</label>
+        <input type="time" id="horaInicio">
 
-<button onclick="calcular()">
-Calcular
-</button>
+        <div class="checkbox">
+            <input type="checkbox" id="horaActual" checked>
 
-<div class="resultado" id="resultado">
-Introduce los datos para calcular.
-</div>
-<div class="creditos">
-    Hecho por <a href="https://www.linkedin.com/in/francisco-parra-navarro-25b976317/" target="_blank"><strong >Francisco Parra Navarro</strong> <i class="fa-brands fa-linkedin"></i></a>
-</div>
+            <label for="horaActual" style="margin:0; font-weight:normal;">
+                Usar hora actual
+            </label>
+        </div>
+
+        <label>Tiempo tirada (minutos)</label>
+        <input type="number" id="tiempo" min="1">
+
+        <label>Cantidad tirada</label>
+        <input type="number" id="cantidadTirada" min="1">
+
+        <label>Cantidad pedido</label>
+        <input type="number" id="cantidadPedido" min="1">
+
+        <button onclick="calcular()">
+            Calcular
+        </button>
+
+        <div class="resultado" id="resultado">
+            Introduce los datos para calcular.
+        </div>
+
+        <div class="creditos">
+            Hecho por
+
+            <a href="https://www.linkedin.com/in/francisco-parra-navarro-25b976317/"
+                target="_blank">
+
+                <strong>Francisco Parra Navarro</strong>
+
+                <i class="fa-brands fa-linkedin"></i>
+
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- HISTORIAL -->
+    <div class="container historial-container">
+
+        <div class="historial-header">
+
+            <h2>
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Historial
+            </h2>
+
+            <button class="btn-borrar-historial"
+                onclick="borrarHistorial()">
+                <i class="fa-solid fa-trash"></i>
+                Borrar historial
+            </button>
+
+        </div>
+
+        <div id="historial">
+
+            <div class="historial-vacio">
+                <i class="fa-solid fa-clock"></i>
+                <p>Aún no hay cálculos guardados.</p>
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 <script src="./js/script.js"></script>
 
+
 </body>
+
 </html>
